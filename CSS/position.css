@@ -1,0 +1,8 @@
+form {
+    margin: 0.3cm 0.2cm 0.5cm 0.1cm;
+    border-style: groove;
+    border-width: 0.6cm;
+    border-color: crimson rgb(77, 210, 100) rgb(67, 183, 215);
+    border-radius: 50px 20px 50px 20px;
+    padding: 0.6cm 0.5cm 0.2cm 0.8cm;
+}

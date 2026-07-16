@@ -1,0 +1,21 @@
+body{
+    font-family: monospace;
+    font-size: large;
+    background-color: rgb(232, 210, 86);
+    transition: background-color 2s ease-in 4s;
+}
+body:hover{
+    background-color: rgb(203, 69, 170);
+}
+button{
+    font-size: x-large;
+}
+#Data{
+    font-size: x-large;
+}
+table,th,td{
+    border-style: inset;
+}
+ul{
+    background:linear-gradient(to top,rgb(232, 147, 161),rgb(118, 176, 198),rgb(128, 128, 197));
+}
