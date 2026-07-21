@@ -1,0 +1,113 @@
+/* ==========================
+   Snake Game - style.css
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+.game-container{
+    width:600px;
+    background:#1f1f1f;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
+    text-align:center;
+    color:#fff;
+}
+
+h1{
+    margin-bottom:15px;
+    font-size:36px;
+}
+
+.score-board{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+canvas{
+    background:#111;
+    border:5px solid #3cff4d;
+    border-radius:10px;
+    display:block;
+    margin:auto;
+}
+
+.controls{
+    margin-top:20px;
+}
+
+button{
+    padding:12px 25px;
+    margin:0 10px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#startBtn{
+    background:#27ae60;
+    color:white;
+}
+
+#restartBtn{
+    background:#e74c3c;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.05);
+    opacity:.9;
+}
+
+.instructions{
+    margin-top:18px;
+    color:#ddd;
+    font-size:15px;
+}
+
+@media(max-width:650px){
+
+    .game-container{
+        width:95%;
+        padding:15px;
+    }
+
+    canvas{
+        width:100%;
+        height:auto;
+    }
+
+    .score-board{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+
+    button{
+        width:100%;
+        margin:8px 0;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+}

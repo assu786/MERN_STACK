@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Study Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOADER ================= -->
+
+    <div id="loader">
+        <div class="loader-box">
+            <div class="spinner"></div>
+            <h2>📚 Digital Study Planner</h2>
+            <p>Loading your workspace...</p>
+        </div>
+    </div>
+
+    <!-- ================= SCROLL TOP ================= -->
+
+    <button id="scrollTopBtn">
+        ⬆️
+    </button>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            📚 Study Planner
+        </div>
+
+        <nav>
+
+            <a href="#dashboard">Dashboard</a>
+
+            <a href="#timetable">Timetable</a>
+
+            <a href="#todo">Tasks</a>
+
+            <a href="#notes">Notes</a>
+
+            <a href="#calendar">Calendar</a>
+
+            <a href="#pomodoro">Pomodoro</a>
+
+            <a href="#progress">Progress</a>
+
+        </nav>
+
+        <div class="header-right">
+
+            <button id="themeToggle">
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard">
+
+            <div class="welcome-card glass">
+
+                <div>
+
+                    <h1 id="greeting">
+                        Good Morning 👋
+                    </h1>
+
+                    <p id="todayDate">
+                        Date
+                    </p>
+
+                    <h2 id="clock">
+                        00:00:00
+                    </h2>
+
+                </div>
+
+                <div class="quote-box">
+
+                    <h3>💡 Daily Motivation</h3>
+
+                    <p id="quote">
+                        Stay consistent.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card glass">
+
+                    <h3>📋 Total Tasks</h3>
+
+                    <h1 id="totalTasks">
+                        0
+                    </h1>
+
+                </div>
+
+                <div class="stat-card glass">
+
+                    <h3>✅ Completed</h3>
+
+                    <h1 id="completedTasks">
+                        0
+                    </h1>
+
+                </div>
+
+                <div class="stat-card glass">
+
+                    <h3>⌛ Pending</h3>
+
+                    <h1 id="pendingTasks">
+                        0
+                    </h1>
+
+                </div>
+
+                <div class="stat-card glass">
+
+                    <h3>🔥 Study Streak</h3>
+
+                    <h1 id="streakCount">
+                        0 Days
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= TIMETABLE ================= -->
+
+        <section id="timetable">
+
+            <div class="section-title">
+
+                <h2>📅 Daily Timetable</h2>
+
+            </div>
+
+            <div class="glass card">
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Subject">
+
+                    <input
+                        type="time"
+                        id="startTime">
+
+                    <input
+                        type="time"
+                        id="endTime">
+
+                    <button id="addTimetable">
+                        Add
+                    </button>
+
+                </div>
+
+                <input
+                    type="text"
+                    id="searchTimetable"
+                    placeholder="🔍 Search timetable">
+
+                <div id="timetableContainer"
+                    class="list-container">
+
+                    <div class="empty-state">
+
+                        <div class="emoji">
+                            📚
+                        </div>
+
+                        <p>
+                            No timetable created yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= TODO ================= -->
+
+        <section id="todo">
+
+            <div class="section-title">
+
+                <h2>✅ To-Do List</h2>
+
+            </div>
+
+            <div class="glass card">
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Enter task">
+
+                    <button id="addTask">
+
+                        Add Task
+
+                    </button>
+
+                </div>
+
+                <div class="toolbar">
+
+                    <input
+                        type="text"
+                        id="searchTask"
+                        placeholder="🔍 Search Task">
+
+                    <select id="filterTasks">
+
+                        <option value="all">
+                            All
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <p id="taskCounter">
+
+                    Total Tasks : 0
+
+                </p>
+
+                <div
+                    id="todoContainer"
+                    class="list-container">
+
+                    <div class="empty-state">
+
+                        <div class="emoji">
+
+                            📝
+
+                        </div>
+
+                        <p>
+
+                            No tasks available.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= NOTES ================= -->
+
+        <section id="notes">
+
+            <div class="section-title">
+
+                <h2>🗒️ Notes</h2>
+
+            </div>
+
+            <div class="glass card">
+
+                <input
+                    type="text"
+                    id="searchNotes"
+                    placeholder="🔍 Search Notes">
+
+                <textarea
+                    id="noteText"
+                    placeholder="Write your note..."></textarea>
+
+                <button id="saveNote">
+
+                    Save Note
+
+                </button>
+
+                <div
+                    id="notesContainer"
+                    class="notes-grid">
+
+                    <div class="empty-state">
+
+                        <div class="emoji">
+
+                            📒
+
+                        </div>
+
+                        <p>
+
+                            No notes created.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CALENDAR ================= -->
+
+        <section id="calendar">
+
+            <div class="section-title">
+
+                <h2>🗓️ Monthly Calendar</h2>
+
+            </div>
+
+            <div class="glass card">
+
+                <div class="calendar-header">
+
+                    <button id="prevMonth">
+
+                        ◀
+
+                    </button>
+
+                    <h2 id="monthYear">
+
+                        July 2026
+
+                    </h2>
+
+                    <button id="nextMonth">
+
+                        ▶
+
+                    </button>
+
+                </div>
+
+                <div class="weekdays">
+
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+
+                </div>
+
+                <div id="calendarGrid">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= POMODORO ================= -->
+
+        <section id="pomodoro">
+
+            <div class="section-title">
+
+                <h2>
+
+                    🍅 Pomodoro Timer
+
+                </h2>
+
+            </div>
+
+            <div class="glass card timer-card">
+
+                <div class="progress-circle">
+
+                    <svg
+                        width="240"
+                        height="240">
+
+                        <circle
+                            cx="120"
+                            cy="120"
+                            r="100"
+                            class="bg-circle">
+                        </circle>
+
+                        <circle
+                            cx="120"
+                            cy="120"
+                            r="100"
+                            class="progress-ring"
+                            id="progressRing">
+                        </circle>
+
+                    </svg>
+
+                    <div id="timerDisplay">
+
+                        25:00
+
+                    </div>
+
+                </div>
+
+                <div class="timer-input">
+
+                    <input
+                        type="number"
+                        id="customMinutes"
+                        placeholder="Minutes">
+
+                </div>
+
+                <div class="timer-buttons">
+
+                    <button id="startTimer">
+
+                        ▶ Start
+
+                    </button>
+
+                    <button id="pauseTimer">
+
+                        ⏸ Pause
+
+                    </button>
+
+                    <button id="resumeTimer">
+
+                        ⏯ Resume
+
+                    </button>
+
+                    <button id="resetTimer">
+
+                        🔄 Reset
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= PROGRESS ================= -->
+
+        <section id="progress">
+
+            <div class="section-title">
+
+                <h2>
+
+                    📈 Progress Tracker
+
+                </h2>
+
+            </div>
+
+            <div class="glass card">
+
+                <div class="progress-info">
+
+                    <h3>
+
+                        Completion
+
+                    </h3>
+
+                    <h2 id="progressPercent">
+
+                        0%
+
+                    </h2>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div id="progressFill">
+
+                    </div>
+
+                </div>
+
+                <div class="progress-stats">
+
+                    <div>
+
+                        <h3>
+
+                            Total
+
+                        </h3>
+
+                        <span id="progressTotal">
+
+                            0
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Completed
+
+                        </h3>
+
+                        <span id="progressCompleted">
+
+                            0
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Pending
+
+                        </h3>
+
+                        <span id="progressPending">
+
+                            0
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            📚 Digital Study Planner |
+            Built with HTML, CSS & JavaScript
+
+        </p>
+
+        <p>
+
+            Keyboard Shortcuts:
+            Ctrl + T (Task),
+            Ctrl + N (Note),
+            Ctrl + F (Search)
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
